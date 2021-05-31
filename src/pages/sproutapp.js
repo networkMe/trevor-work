@@ -23,7 +23,7 @@ const SproutappPage = () => {
             <p>It allowed people without the application to recieve the anonymous message as an SMS, prompting them to install the application and reply or send their own anonymous message.</p>
             <p className="text-red-500">Unfortunately, whilst the app worked well, introducing users onto the application was difficult. In addition, the AI behind analyzing the "quality" of the messages was a beta implementation that had teething problems, stunting the initial growth of the application.</p>
           </div>
-          <div className="mt-10 mx-auto flex flex-row flex-wrap items-baseline gap-3">
+          <div className="mt-10 mx-auto flex flex-row flex-wrap items-baseline gap-4">
             <StaticImage src="../images/sproutapp/message_list.png" alt="" className="max-w-sm" />
             <StaticImage src="../images/sproutapp/message.png" alt="" className="max-w-sm" />
             <StaticImage src="../images/sproutapp/community.png" alt="" className="max-w-sm" />

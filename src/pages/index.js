@@ -18,7 +18,7 @@ const IndexPage = () => {
       <section className="text-gray-600 body-font">
         <div className="px-5 md:py-12 mx-auto flex flex-col">
           <div className="lg:w-5/6 mx-auto">
-            <div className="flex flex-col sm:flex-row mt-10">
+            <div className="flex flex-col sm:flex-row mt-10 sm:justify-center">
               <div className="sm:w-1/2 md:w-1/3 lg:w-1/4 text-center sm:pr-4 sm:py-4">
                 <div className="inline-flex items-center justify-center text-gray-400">
                   <StaticImage src="../images/portrait.jpg" alt="" className="w-24 h-24 rounded-full" />

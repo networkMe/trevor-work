@@ -26,7 +26,7 @@ const CSTracerPage = () => {
             <p>Thus, cstracer.com was born in late 2015.</p>
             <p className="text-red-500">Unfortunately, whilst the base engine worked very well, it became too costly to run and Valve's lack of an API to integrate with CS:GO made developing new features extremely difficult (or in some cases impossible). CS Tracer shut down in early 2017.</p>
           </div>
-          <div className="space-y-5 mt-10">
+          <div className="flex flex-row flex-wrap items-baseline gap-4 mt-10">
             <StaticImage src="../images/cstracer/homepage.jpg" alt="" />
             <StaticImage src="../images/cstracer/player_overview.jpg" alt="" />
             <StaticImage src="../images/cstracer/player_records.jpg" alt="" />
