@@ -1,182 +1,77 @@
 import * as React from "react"
+import { Helmet } from "react-helmet"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { StaticImage } from "gatsby-plugin-image"
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+import JsonProfile from "../components/json_profile"
+import ProjectPanel from "../components/project_panel"
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
-
-// markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
+    <main>
+      <Helmet>
+        <title>Trevor Meehl - Home</title>
+        <meta name="description" content="Personal website for Trevor Meehl - Programmer, Gamer, Chef" />
+        <link rel="canonical" href="https://trevor.work/" />
+      </Helmet>
+      <section className="text-gray-600 body-font">
+        <div className="px-5 md:py-12 mx-auto flex flex-col">
+          <div className="lg:w-5/6 mx-auto">
+            <div className="flex flex-col sm:flex-row mt-10">
+              <div className="sm:w-1/4 text-center sm:pr-8 sm:py-8">
+                <div className="inline-flex items-center justify-center text-gray-400">
+                  <StaticImage src="../images/portrait.jpg" alt="" className="w-24 h-24 rounded-full" />
+                </div>
+                <div className="flex flex-col items-center text-center justify-center">
+                  <h1 className="font-medium title-font mt-4 text-gray-900 text-xl">Trevor Meehl</h1>
+                  <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
+                  <p className="text-base">I originally became interested in technology and (thus) computers when I was 10. Shortly after I began, I realised how much I enjoyed using them and today, over 10 years later, I still do.</p>
+                </div>
+                <div className="mt-3 space-x-2">
+                  <a href="https://github.com/networkMe" aria-label="Github"><FontAwesomeIcon icon={faGithub} size="2x" /></a>
+                  <a href="https://www.linkedin.com/pub/trevor-meehl/48/9a4/701" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} size="2x" /></a>
+                </div>
+              </div>
+              <div className="sm:px-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                <p className="leading-relaxed mb-2">I've used a multitude of different languages to create personal and business projects including:</p>
+                <ul className="list-disc list-inside experience-list">
+                  <li>HTML / CSS / JS / <a href="https://jquery.com/">jQuery</a></li>
+                  <li>React.js / <a href="https://www.gatsbyjs.com/">GatsbyJS</a> (including this site!)</li>
+                  <li>PHP (<a href="http://laravel.com/">Laravel</a>)</li>
+                  <li>C# .NET</li>
+                  <li>C / C++ / C++11</li>
+                  <li>Java including <a href="https://developer.android.com/">Android</a></li>
+                  <li>SQL / <a href="https://docs.microsoft.com/en-us/sql/t-sql/language-reference">T-SQL</a> / <a href="https://www.mongodb.org/">MongoDB</a></li>
+                  <li><a href="https://nodejs.org/">Node.js</a> (notably related to REST API's utilizing <a href="http://expressjs.com/">Express.js</a>)</li>
+                </ul>
+                <p className="leading-relaxed mt-5 mb-2">In addition to programming, I also have experience in reverse engineering:</p>
+                <ul className="list-disc list-inside experience-list">
+                  <li>Native Code (<a href="https://en.wikipedia.org/wiki/X86_assembly_language">x86 ASM</a>)</li>
+                  <li>Unpacking difficult DRM such as <a href="https://en.wikipedia.org/wiki/Arxan_Technologies">Arxan</a></li>
+                  <li><a href="https://en.wikipedia.org/wiki/Common_Intermediate_Language">MSIL</a> Code (.NET / Mono)</li>
+                  <li><a href="https://en.wikipedia.org/wiki/Java_bytecode">Java Bytecode</a></li>
+                </ul>
+              </div>
+              <div className="hidden xl:block xl:border-l border-gray-200 pl-5">
+                <JsonProfile />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="text-gray-600 body-font">
+        <div className="text-center border-t mt-4 pt-4">
+          <h2 className="font-medium text-gray-900 text-xl mb-4">Projects</h2>
+          <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center">
+            <ProjectPanel img="images/missinghud2.png" title="Missing HUD 2" href="https://github.com/networkMe/missinghud2">Gameplay overlay HUD for OpenGL game</ProjectPanel>
+            <ProjectPanel img="images/sprout.png" title="Sproutapp" href="/sproutapp">Anonymous messaging mobile application</ProjectPanel>
+            <ProjectPanel img="images/cstracer.png" title="CS Tracer" href="/cstracer">CS:GO Stat tracking &amp; analysis website</ProjectPanel>
+            <ProjectPanel img="images/tgm.png" title="TGM Computers" href="https://www.tgmcomputers.com">IT business support and application development</ProjectPanel>
+            <ProjectPanel img="images/coming_soon.png" title="Homegrown" href="#">Coming Soon</ProjectPanel>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }

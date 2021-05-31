@@ -1,52 +1,28 @@
 import * as React from "react"
+import { Helmet } from "react-helmet"
+
 import { Link } from "gatsby"
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFrown } from '@fortawesome/free-regular-svg-icons'
+import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-
-// markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
+    <main>
+      <Helmet>
+        <title>Trevor Meehl - Not Found</title>
+        <meta name="description" content="Page not found" />
+      </Helmet>
+      <section className="text-gray-600 body-font">
+        <div className="w-2/3 sm:w-1/4 mx-auto mt-24">
+          <p className="mb-3 text-lg"><FontAwesomeIcon icon={faFrown} size="3x" /></p>
+          <h1 className="mb-5 text-lg">Page not found</h1>
+          <p>
+          <Link to="/" className="text-indigo-700"><FontAwesomeIcon icon={faLongArrowAltLeft} /> Go home</Link>
+          </p>
+        </div>
+      </section>
     </main>
   )
 }
