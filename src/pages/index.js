@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Helmet } from "react-helmet"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+
 import { StaticImage } from "gatsby-plugin-image"
 
 import JsonProfile from "../components/json_profile"
@@ -29,8 +29,8 @@ const IndexPage = () => {
                   <p className="text-base">I originally became interested in technology and (thus) computers when I was 10. Shortly after I began, I realised how much I enjoyed using them and today, over 10 years later, I still do.</p>
                 </div>
                 <div className="mt-3 space-x-2">
-                  <a href="https://github.com/networkMe" aria-label="Github"><FontAwesomeIcon icon={faGithub} size="2x" /></a>
-                  <a href="https://www.linkedin.com/pub/trevor-meehl/48/9a4/701" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} size="2x" /></a>
+                  <a href="https://github.com/networkMe" aria-label="Github"><FaGithub className="inline-block align-text-top text-4xl" /></a>
+                  <a href="https://www.linkedin.com/pub/trevor-meehl/48/9a4/701" aria-label="LinkedIn"><FaLinkedin className="inline-block align-text-top text-4xl" /></a>
                 </div>
               </div>
               <div className="sm:px-4 sm:py-4 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">

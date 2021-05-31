@@ -1,12 +1,9 @@
 import * as React from "react"
 import { Helmet } from "react-helmet";
+import { FaLongArrowAltLeft } from 'react-icons/fa'
 
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
-
 
 const CSTracerPage = () => {
   return (
@@ -19,7 +16,7 @@ const CSTracerPage = () => {
       <section className="text-gray-600 body-font">
         <div className="sm:w-2/3 md:py-12 mx-auto p-5">
           <nav className="mb-5">
-            <Link to="/" className="text-indigo-700"><FontAwesomeIcon icon={faLongArrowAltLeft} /> Back</Link>
+            <Link to="/" className="text-indigo-700"><FaLongArrowAltLeft className="inline-block align-text-top" /> Back</Link>
           </nav>
           <div className="space-y-2">
             <p>In 2015, I started playing and spectating CS:GO competitive matches after deciding I'd take a break from Dota 2.</p>

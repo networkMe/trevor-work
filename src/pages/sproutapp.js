@@ -1,12 +1,9 @@
 import * as React from "react"
 import { Helmet } from "react-helmet";
+import { FaLongArrowAltLeft } from 'react-icons/fa'
 
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
-
 
 const SproutappPage = () => {
   return (
@@ -19,7 +16,7 @@ const SproutappPage = () => {
       <section className="text-gray-600 body-font">
         <div className="sm:w-2/3 md:py-12 mx-auto p-5">
           <nav className="mb-5">
-            <Link to="/" className="text-indigo-700"><FontAwesomeIcon icon={faLongArrowAltLeft} /> Back</Link>
+            <Link to="/" className="text-indigo-700"><FaLongArrowAltLeft className="inline-block align-text-top" /> Back</Link>
           </nav>
           <div className="space-y-2">
             <p>Sproutapp was a secure mobile platform that used its artifical intelligence engine to allow users to send anonymous messages to people they know, which is only received if it achieves a certain positive threshold.</p>

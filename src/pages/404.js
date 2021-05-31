@@ -1,11 +1,8 @@
 import * as React from "react"
 import { Helmet } from "react-helmet"
+import { FaRegFrown, FaLongArrowAltLeft } from 'react-icons/fa'
 
 import { Link } from "gatsby"
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFrown } from '@fortawesome/free-regular-svg-icons'
-import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons'
 
 const NotFoundPage = () => {
   return (
@@ -16,10 +13,10 @@ const NotFoundPage = () => {
       </Helmet>
       <section className="text-gray-600 body-font">
         <div className="w-2/3 sm:w-1/4 mx-auto mt-24">
-          <p className="mb-3 text-lg"><FontAwesomeIcon icon={faFrown} size="3x" /></p>
+          <p className="mb-3 text-8xl"><FaRegFrown className="inline-block align-text-top"  /></p>
           <h1 className="mb-5 text-lg">Page not found</h1>
           <p>
-          <Link to="/" className="text-indigo-700"><FontAwesomeIcon icon={faLongArrowAltLeft} /> Go home</Link>
+          <Link to="/" className="text-indigo-700"><FaLongArrowAltLeft className="inline-block align-text-top"  /> Go home</Link>
           </p>
         </div>
       </section>

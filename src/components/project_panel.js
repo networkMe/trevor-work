@@ -1,7 +1,5 @@
 import * as React from "react"
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
+import { FaLongArrowAltRight } from 'react-icons/fa'
 
 import Link from "../components/link"
 import FileImage from "../components/file_image"
@@ -13,7 +11,7 @@ const ProjectPanel = ({img, title, href, children}) => {
         <div className="flex flex-col items-start text-left mx-3">
             <h4 className="text-lg mt-2 font-bold">{title}</h4>
             <p className="text-sm text-gray-400">{children}</p>
-            <Link href={href} className="text-indigo-500 inline-flex items-center text-sm mt-2">Learn more <FontAwesomeIcon icon={faLongArrowAltRight} className="ml-1" /></Link>
+            <Link href={href} className="text-indigo-500 inline-flex items-center text-sm mt-2">Learn more <FaLongArrowAltRight className="ml-1 inline-block align-text-top" /></Link>
         </div>
       </div>
     )
