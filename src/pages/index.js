@@ -19,7 +19,7 @@ const IndexPage = () => {
         <div className="px-5 md:py-12 mx-auto flex flex-col">
           <div className="lg:w-5/6 mx-auto">
             <div className="flex flex-col sm:flex-row mt-10">
-              <div className="sm:w-1/4 text-center sm:pr-8 sm:py-8">
+              <div className="sm:w-1/2 md:w-1/3 lg:w-1/4 text-center sm:pr-4 sm:py-4">
                 <div className="inline-flex items-center justify-center text-gray-400">
                   <StaticImage src="../images/portrait.jpg" alt="" className="w-24 h-24 rounded-full" />
                 </div>
@@ -33,9 +33,9 @@ const IndexPage = () => {
                   <a href="https://www.linkedin.com/pub/trevor-meehl/48/9a4/701" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} size="2x" /></a>
                 </div>
               </div>
-              <div className="sm:px-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+              <div className="sm:px-4 sm:py-4 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
                 <p className="leading-relaxed mb-2">I've used a multitude of different languages to create personal and business projects including:</p>
-                <ul className="list-disc list-inside experience-list">
+                <ul className="list-disc list-inside text-left ml-2 experience-list">
                   <li>HTML / CSS / JS / <a href="https://jquery.com/">jQuery</a></li>
                   <li>React.js / <a href="https://www.gatsbyjs.com/">GatsbyJS</a> (including this site!)</li>
                   <li>PHP (<a href="http://laravel.com/">Laravel</a>)</li>
@@ -46,7 +46,7 @@ const IndexPage = () => {
                   <li><a href="https://nodejs.org/">Node.js</a> (notably related to REST API's utilizing <a href="http://expressjs.com/">Express.js</a>)</li>
                 </ul>
                 <p className="leading-relaxed mt-5 mb-2">In addition to programming, I also have experience in reverse engineering:</p>
-                <ul className="list-disc list-inside experience-list">
+                <ul className="list-disc list-inside text-left ml-2 experience-list">
                   <li>Native Code (<a href="https://en.wikipedia.org/wiki/X86_assembly_language">x86 ASM</a>)</li>
                   <li>Unpacking difficult DRM such as <a href="https://en.wikipedia.org/wiki/Arxan_Technologies">Arxan</a></li>
                   <li><a href="https://en.wikipedia.org/wiki/Common_Intermediate_Language">MSIL</a> Code (.NET / Mono)</li>
